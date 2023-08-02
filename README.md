@@ -1,2 +1,5 @@
-### Hexlet tests and linter status:
-[![Actions Status](https://github.com/VladislavArutiunian/php-project-57/workflows/hexlet-check/badge.svg)](https://github.com/VladislavArutiunian/php-project-57/actions)
+# Test task
+
+
+[![hexlet-check](https://github.com/VladislavArutiunian/php-project-57/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/VladislavArutiunian/php-project-57/actions/workflows/hexlet-check.yml)
+[![my_check](https://github.com/VladislavArutiunian/php-project-57/actions/workflows/my-check.yml/badge.svg)](https://github.com/VladislavArutiunian/php-project-57/actions/workflows/my-check.yml)
