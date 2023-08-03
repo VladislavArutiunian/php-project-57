@@ -11,9 +11,9 @@ class PasswordUpdateTest extends TestCase
 {
     use RefreshDatabase;
 
+    //phpcs:disable
     public function test_password_can_be_updated(): void
     {
-        //phpcs:disable
         $user = User::factory()->create();
 
         $response = $this

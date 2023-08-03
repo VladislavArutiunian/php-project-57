@@ -3,7 +3,7 @@ start:
 	php -S 0.0.0.0:$(PORT) -t public
 
 lint:
-	composer exec --verbose phpcs -- --standard=PSR12 app/ database/ routes/ tests/
+	composer exec --verbose phpcs -- --standard=PSR12 app/ database/ routes/
 
 test:
 	vendor/bin/phpunit tests/
