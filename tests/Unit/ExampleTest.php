@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 
 class ExampleTest extends TestCase
 {
+    //phpcs:disable
     /**
      * A basic test example.
      */
@@ -13,4 +14,5 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+    //phpcs:enable
 }

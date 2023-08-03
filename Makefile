@@ -1,4 +1,4 @@
-PORT ?= 80
+PORT ?= 8080
 start:
 	php -S 0.0.0.0:$(PORT) -t public
 
@@ -13,3 +13,10 @@ lint-fix:
 
 start-locally:
 	php -S localhost:8082 -t public public/index.php
+
+migrate:
+	php artisan migrate
+
+seed-db:
+	php artisan db:seed
+
