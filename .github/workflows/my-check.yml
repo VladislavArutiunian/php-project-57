@@ -20,8 +20,6 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
 
-      - name: Gen key
-        run:  php artisan key:generate
       - name: Conf cache
         run: php artisan config:cache
 
