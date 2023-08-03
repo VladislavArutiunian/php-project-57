@@ -13,6 +13,7 @@ class PasswordUpdateTest extends TestCase
 
     public function test_password_can_be_updated(): void
     {
+        //phpcs:disable
         $user = User::factory()->create();
 
         $response = $this
@@ -48,4 +49,5 @@ class PasswordUpdateTest extends TestCase
             ->assertSessionHasErrorsIn('updatePassword', 'current_password')
             ->assertRedirect('/profile');
     }
+    //phpcs:enable
 }

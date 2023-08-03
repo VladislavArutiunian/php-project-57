@@ -11,6 +11,7 @@ class AuthenticationTest extends TestCase
 {
     use RefreshDatabase;
 
+    //phpcs:disable
     public function test_login_screen_can_be_rendered(): void
     {
         $response = $this->get('/login');
@@ -42,4 +43,5 @@ class AuthenticationTest extends TestCase
 
         $this->assertGuest();
     }
+    //phpcs:enable
 }
