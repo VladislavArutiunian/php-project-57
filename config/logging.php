@@ -4,6 +4,7 @@ use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
+use Rollbar\Laravel\MonologHandler;
 
 return [
 
@@ -52,9 +53,15 @@ return [
     */
 
     'channels' => [
+        'rollbar' => [
+            'driver' => 'monolog',
+            'handler' => MonologHandler::class,
+            'access_token' => env('ROLLBAR_TOKEN'),
+            'level' => 'debug',
+        ],
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['rollbar', 'single'],
             'ignore_exceptions' => false,
         ],
 
@@ -89,7 +96,7 @@ return [
             'handler_with' => [
                 'host' => env('PAPERTRAIL_URL'),
                 'port' => env('PAPERTRAIL_PORT'),
-                'connectionString' => 'tls://'.env('PAPERTRAIL_URL').':'.env('PAPERTRAIL_PORT'),
+                'connectionString' => 'tls://' . env('PAPERTRAIL_URL') . ':' . env('PAPERTRAIL_PORT'),
             ],
             'processors' => [PsrLogMessageProcessor::class],
         ],
